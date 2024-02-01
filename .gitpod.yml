@@ -1,0 +1,32 @@
+
+ports:
+  - name: Website preview
+    port: 5173
+    onOpen: open-preview
+
+# List the start-up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks
+tasks:
+  - name: Install Dependencies and Start Dev Server
+    init: |
+     npm install node-calls-python
+     npm install -g node-gyp
+
+     npm install
+
+     sudo apt install python3-dev
+     sudo apt install make
+     sudo apt install g++
+     
+     pip install --upgrade pip
+     pip install --upgrade pip wheel setuptools
+     #  pip install numpy
+
+     if test -e requirements.txt; then {
+        pip install -r requirements.txt
+      } fi
+      
+    command: npm run dev
+
+vscode:
+  extensions:
+    - svelte.svelte-vscode
