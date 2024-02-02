@@ -1,9 +1,7 @@
-<script>
-	import '../app.pcss';
-</script>
 <nav>
-	<a href="/">Home</a>
-	<a href="/contacts">contacts</a>
+	<a href="/">home</a>
+	<a href="/blog">blog</a>
 </nav>
 
 <slot />
+
