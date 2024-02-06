@@ -7,11 +7,26 @@
 <div>
 	<a href='/'>Home</a>
 </div>
-
+<div class="overflow-x-auto">
+    <table class="table ">
+        
 {#if data.result}
-<ul>
+<thead>
+    <tr>
+      <th>Страна</th> 
+      <th>Континет</th> 
+    </tr>
+  </thead> 
+
 	{#each data.result as item}
-		<li>{item[0]} -- {item[1]}</li>
+    
+    
+    <tbody>
+        <tr>
+		<td>{item[0]}</td>  <td>{item[1]}</td>
+        </tr>
+    </tbody>
 	{/each}
-</ul>
 {/if}
+</table>
+</div>
