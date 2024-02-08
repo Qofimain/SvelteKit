@@ -3,7 +3,6 @@
     console.log(data)
 </script>
 
-<h1>Python</h1>
 <div>
 	<a href='/'>Home</a>
 </div>
