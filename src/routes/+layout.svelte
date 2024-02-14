@@ -7,6 +7,7 @@
 	<a href="/blog">blog</a>
 	<a href="/python">TableC</a>
 	<a href="/countries">Countries</a>
+	<a href="/earth">Earth</a>
 </nav>
 
 <slot />

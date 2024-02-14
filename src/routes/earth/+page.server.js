@@ -7,9 +7,8 @@ let pymodule = py.importSync("src/lib/py/pydata.py");
 
 	export  function load({ params }) {
 		
-		// const result = py.callSync(pymodule, 'multiple',[1, 2, 3, 4], [2, 3, 4, 5]); // result will hold the output of run_my_code
 		const result2 = py.evalSync(pymodule, "getcountries()");
-        // console.log(result2)
-		 return {"world":result2};
+        console.log(result2)
+		 return result2;
 
-	}
+	}	
