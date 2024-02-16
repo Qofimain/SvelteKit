@@ -2,6 +2,12 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
     let selected =data.regions[0]//'AFRICA'
+
+	function earthcookis(reg)
+	{
+		selected = reg
+		
+	}
 </script>
 <!-- {JSON.stringify(data)} -->
 <div class="layout">
