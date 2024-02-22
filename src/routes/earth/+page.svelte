@@ -1,15 +1,26 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
-    let selected =data.regions[0]//'AFRICA'
-
-	function earthcookis(reg)
+	import { onMount } from 'svelte';
+    // let selected =data.regions[0]//'AFRICA'
+	let selected
+	onMount(() => 
 	{
-		selected = reg
-		
-	}
+		const cookieValue = document.cookie
+			.split("; ")
+            .find((row) => row.startsWith("visited="))
+            ?.split("=")[1];
+
+             if(cookieValue){
+			   selected = cookieValue}
+			 else{
+				selected =data.regions[0]//'AFRICA'
+			 }  
+
+			})
+
 </script>
-<!-- {JSON.stringify(data)} -->
+{JSON.stringify(data.visited)}
 <div class="layout">
 	<main>
 		<div style="border:1px solid blue;padding:25px">
@@ -23,8 +34,10 @@
 	<aside>
 		<ul>
 			{#each data.regions as reg}
+			
 				<li on:click={()=>selected=reg} style="cursor: pointer">
-                    {reg.toLowerCase()}
+                    {reg.toLowerCase() }
+
 				</li>
 			{/each}
 		</ul>
