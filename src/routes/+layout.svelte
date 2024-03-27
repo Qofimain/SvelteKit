@@ -8,7 +8,7 @@
 	<a href="/python">TableC</a>
 	<a href="/countries">Countries</a>
 	<a href="/earth">Earth</a>
-	<a class='link' href="/todo">ToDo</a>
+	<a href="/todo">ToDo</a>
 </nav>
 
 <slot />

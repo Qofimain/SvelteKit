@@ -1,5 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
+
 	export let data;
 	export let form;
 
@@ -12,6 +13,7 @@
 		reader.readAsDataURL(image);
 		reader.onload = (e) => {
 			pict = e.target.result;
+            
 		};
 	}
 
@@ -39,6 +41,7 @@
 					name="description"
 					value={form?.description ?? ''}
 					autocomplete="off"
+                    
 					
 				/>
 			</label>
@@ -54,7 +57,7 @@
 			</div>
 		</div>
 		<div>
-			<input type="submit" value="Save" />
+			<input type="submit" value="Save"  style="cursor: pointer;"/>
 		</div>
 	</form>
 	<div>
