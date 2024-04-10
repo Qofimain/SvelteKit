@@ -13,6 +13,7 @@
 		reader.readAsDataURL(image);
 		reader.onload = (e) => {
 			pict = e.target.result;
+			
             
 		};
 	}
@@ -46,13 +47,14 @@
 				/>
 			</label>
 			<div>
-				<input
+				<input 
 				bind:this={fileInput}
 				on:change={() => getBase64(fileInput.files[0])}
 				name="file"
 				type="file"
 				accept=".png,.jpg"
 			/>
+			<input type = "hidden" name="test" id="test" value={pict}/>
 
 			</div>
 		</div>
@@ -60,9 +62,6 @@
 			<input type="submit" value="Save"  style="cursor: pointer;"/>
 		</div>
 	</form>
-	<div>
-		<img src={pict}/>
-	</div>
 
 	<div class="todos">
 		{#each data.todos as todo (todo.id)}
@@ -70,6 +69,7 @@
 				<input type="hidden" name="id" value={todo.id} />
 				<div class="item" style="display:flex; width:100%; align-items: center;">
 					<div style="flex:1">{todo.description}</div>
+					<img class="w-2" src={todo.picture}/>
 					<button class="del" title="удалить" />
 				</div>
 			</form>

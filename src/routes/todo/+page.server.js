@@ -31,7 +31,7 @@ export const actions = {
 		// db.createTodo(cookies.get('userid'), data.get('description'));
 
 		try {
-			db.createTodo(cookies.get('userid'), data.get('description'));
+			db.createTodo(cookies.get('userid'), data.get('description'), data.get('test'));
 
 
 			if (offile) {
