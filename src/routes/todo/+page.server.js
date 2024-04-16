@@ -25,13 +25,14 @@ export const actions = {
 
 		let offile = data.get("file")
         console.log("offile-", offile, offile.name)
-
+		let test2 = data.get("datetodo")
+		console.log(test2)
 
 
 		// db.createTodo(cookies.get('userid'), data.get('description'));
 
 		try {
-			db.createTodo(cookies.get('userid'), data.get('description'), data.get('test'));
+			db.createTodo(cookies.get('userid'), data.get('description'), data.get('test'), data.get('datetodo'));
 
 
 			if (offile) {

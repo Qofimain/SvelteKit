@@ -7,7 +7,9 @@
 	let creating = false;
 	let fileInput;
 	let pict;
-
+	let todoDate;
+	
+-
 	function getBase64(image) {
 		const reader = new FileReader();
 		reader.readAsDataURL(image);
@@ -54,12 +56,19 @@
 				type="file"
 				accept=".png,.jpg"
 			/>
+			
 			<input type = "hidden" name="test" id="test" value={pict}/>
-
+			
 			</div>
 		</div>
+		<input 
+			bind:this={todoDate}
+			type = 'date' 
+			name = 'datetodo'
+			/>
 		<div>
 			<input type="submit" value="Save"  style="cursor: pointer;"/>
+			
 		</div>
 	</form>
 
@@ -69,7 +78,8 @@
 				<input type="hidden" name="id" value={todo.id} />
 				<div class="item" style="display:flex; width:100%; align-items: center;">
 					<div style="flex:1">{todo.description}</div>
-					<img class="w-2" src={todo.picture}/>
+					<img class = "w-2" src={todo.picture}/>
+					<date>{todo.dateCreat}</date> 
 					<button class="del" title="удалить" />
 				</div>
 			</form>
