@@ -9,8 +9,9 @@
 	let pict;
 	let todoDate;
 	
--
+
 	function getBase64(image) {
+		console.log("Base64");
 		const reader = new FileReader();
 		reader.readAsDataURL(image);
 		reader.onload = (e) => {
@@ -65,6 +66,7 @@
 			bind:this={todoDate}
 			type = 'date' 
 			name = 'datetodo'
+			
 			/>
 		<div>
 			<input type="submit" value="Save"  style="cursor: pointer;"/>
@@ -76,10 +78,10 @@
 		{#each data.todos as todo (todo.id)}
 			<form method="POST" action="?/delete">
 				<input type="hidden" name="id" value={todo.id} />
-				<div class="item" style="display:flex; width:100%; align-items: center;">
+				<div class:active={ new Date(todo.dateCreat).setHours(23) < new Date()} class="item" style="display:flex; width:100%; align-items: center;">
 					<div style="flex:1">{todo.description}</div>
 					<img class = "w-2" src={todo.picture}/>
-					<date>{todo.dateCreat}</date> 
+					<date>{console.log(new Date(todo.dateCreat), new Date()), new Date(todo.dateCreat).toLocaleDateString()}</date> 
 					<button class="del" title="удалить" />
 				</div>
 			</form>
@@ -89,6 +91,9 @@
 </div>
 
 <style>
+	.active{
+		background-color: red;
+	}
 	.centered {
 		max-width: 20em;
 		margin: 50px auto;
