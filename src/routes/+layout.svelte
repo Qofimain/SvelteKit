@@ -9,6 +9,7 @@
 	<a href="/countries">Countries</a>
 	<a href="/earth">Earth</a>
 	<a href="/todo">ToDo</a>
+	<a href="/grid">Grid</a>
 </nav>
 
 <slot />

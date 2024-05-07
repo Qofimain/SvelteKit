@@ -34,6 +34,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"node-calls-python": "^1.8.4"
+		"node-calls-python": "^1.9.1"
 	}
 }
