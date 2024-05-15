@@ -1,16 +1,18 @@
 <script>
-    const fetcharr = (async () => {
-        const arrdata = await fetch('https://jsonplaceholder.typicode.com/posts')
-        return await arrdata.json()
+    // const fetcharr = (async () => {
+    //     const arrdata = await fetch('https://jsonplaceholder.typicode.com/posts')
+    //     return await arrdata.json()
     
-    })
-    let x = fetcharr()
+    // })
+    // let x = fetcharr()
+    export let data
+    {JSON.stringify(data)}
 </script>
-
+<!-- 
 {#await x}
 <p>...wait</p> 
 {:then data} 
-<!-- {JSON.stringify(data)} -->
+
 <div class="wrapper">
   {#each data as item}
   
@@ -55,4 +57,4 @@
     right:10px;
     
 }
-</style>
+</style> -->
