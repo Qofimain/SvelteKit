@@ -7,4 +7,3 @@ import { goto } from '$app/navigation';
   goto(`grid/${data.users[0]}`);
 }
 </script>
-sdasd

@@ -1,6 +1,6 @@
 async function getPostUsers(id)
 {
-    const contentPost = await fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
+    const contentPost = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
     return contentPost.json()
 }
 

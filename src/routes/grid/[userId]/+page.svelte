@@ -1,23 +1,29 @@
 <script>
     export let data
-
+	import { page } from '$app/stores';
 </script>
 
+<svelte:head>
+	<title>Посты пользователя {$page.params.userid}</title>
+</svelte:head>
+
 <div class='posts'>
-    {JSON.stringify(data.userPosts)}
-    {#each data.userPosts as title}
+    
+    {#each data.userPosts as item}
     <div>
-        <div class='meta left'>
-            {title.userId}
+		<div class="idrow">
+        <div>
+            UserId {item.userId}
             
         </div>
 
-        <div class='meta right'>
-            {title.id}
-        </div>
-
         <div>
-            {title.title}
+            PostId {item.id}
+        </div>
+	</div>
+
+        <div class = "bordercut">
+            {item.body}
         </div>
     </div>    
     {/each}
@@ -25,28 +31,27 @@
 
 <style>
     .posts {
-		 width: 95%; 
+		width: 95%; 
  		display: grid;
 
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		grid-gap: 8px;
 		padding: 15px 10px;
 		margin: 20px auto;
-		background-color: rgb(213, 209, 190);
-    }
-
-	.meta{
-		background-color: blanchedalmond;
-		position:absolute;
+		background-color: rgb(43, 45, 46);
+		border: 1px solid rgb(255, 255, 255);
 		
-		top:3px;
-		font-size:0.75rem
+    }
+	.bordercut{
+		border: 1px solid rgb(255, 255, 255);
+		
 	}
-	.left{
-		left:10px; 
-	}
-	.right{
-		right:10px; 
+	.idrow{
+		column-count: 2;
+		border: 1px solid white;
+		padding: 5px;
+		margin-left:px;
+
 	}
 </style>
 
