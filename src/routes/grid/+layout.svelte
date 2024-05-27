@@ -1,8 +1,9 @@
 <script>
     export let data;
 	let current = data.users[0];
-	const onlink_click = (userid) => {
-		current = userid;
+
+	const onlink_click = (userId) => {
+		current = userId;
 	};
 </script>
 
