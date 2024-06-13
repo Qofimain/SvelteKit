@@ -10,6 +10,7 @@
 	<a href="/earth">Earth</a>
 	<a href="/todo">ToDo</a>
 	<a href="/grid">Grid</a>
+	<a href="/ranlist">RandomList</a>
 </nav>
 
 <slot />
